@@ -19,6 +19,18 @@ pipeline {
                 
             }
         }
+        stage('UAT') {
+            steps {
+                echo 'Aguardando teste de aceitação.'
+                input message: 'Podemos ir para produção?'
+            }
+          
+        }
+        stage('Prod') {
+            steps {
+                echo 'Api pronta para produção.'
+            }
+        }
     }
     post{
         always {
